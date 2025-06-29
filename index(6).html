@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STORYBOARD SAVING BOSSCHA</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    img {
+      max-width: 800px;
+      max-height: 600px;
+      box-shadow: 0 0 10px #000;
+      border-radius: 10px;
+    }
+    .controls {
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #444;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h2>✨ Storyboard Saving Bosscha ✨</h2>
+  <img id="pageImage" src="pages/page_1.jpg" alt="Page 1">
+  <div class="controls">
+    <button onclick="prevPage()">◀️ Prev</button>
+    <button onclick="nextPage()">Next ▶️</button>
+  </div>
+  <script>
+    const images = ["pages/page_1.jpg", "pages/page_2.jpg", "pages/page_3.jpg", "pages/page_4.jpg", "pages/page_5.jpg", "pages/page_6.jpg", "pages/page_7.jpg", "pages/page_8.jpg", "pages/page_9.jpg", "pages/page_10.jpg", "pages/page_11.jpg", "pages/page_12.jpg", "pages/page_13.jpg", "pages/page_14.jpg", "pages/page_15.jpg", "pages/page_16.jpg", "pages/page_17.jpg", "pages/page_18.jpg", "pages/page_19.jpg", "pages/page_20.jpg", "pages/page_21.jpg", "pages/page_22.jpg", "pages/page_23.jpg", "pages/page_24.jpg", "pages/page_25.jpg", "pages/page_26.jpg", "pages/page_27.jpg", "pages/page_28.jpg", "pages/page_29.jpg", "pages/page_30.jpg", "pages/page_31.jpg", "pages/page_32.jpg", "pages/page_33.jpg", "pages/page_34.jpg", "pages/page_35.jpg"];
+    let currentPage = 0;
+    const imgElement = document.getElementById("pageImage");
+
+    function showPage(index) {
+      if (index >= 0 && index < images.length) {
+        currentPage = index;
+        imgElement.src = images[currentPage];
+      }
+    }
+
+    function nextPage() {
+      if (currentPage < images.length - 1) showPage(currentPage + 1);
+    }
+
+    function prevPage() {
+      if (currentPage > 0) showPage(currentPage - 1);
+    }
+  </script>
+</body>
+</html>
